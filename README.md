@@ -1,11 +1,7 @@
 ```java
-public enum DevExperience {
-JUNIOR(1), MIDLEVEL(2), SENIOR(3), NINJA(4), EVANGELIST(5);
-}
+public enum DevExperience { JUNIOR(1), MIDLEVEL(2), SENIOR(3), NINJA(4), EVANGELIST(5); }
 
-public enum DevRoles {
-FRONTEND(1), BACKEND(2), FULLSTACK(3), DATASCIENTIST(4), OTHER(0);
-}
+public enum DevRoles { FRONTEND(1), BACKEND(2), FULLSTACK(3), DATASCIENTIST(4), OTHER(0); }
 
 @Entity
 @Table( name = "DEVS" )
@@ -23,13 +19,6 @@ public class Dev {
     
     ▾ //GETTERS ...
     
-    @Id
-    @GeneratedValue(generator="increment")
-    @GenericGenerator(name="increment", strategy = "increment")
-    public Long getId() {
-        return id;
-    }
-    
    public Integer getAge(Integer devAge){
       if(devAge < 18) { return 18; }
       
@@ -37,9 +26,6 @@ public class Dev {
       
       return devAge;
    }
-   
-   @Temporal(TemporalType.TIMESTAMP)
-   public Date getWorkingSince() { return date; }
 }
 
 protected void setUp() throws Exception {
