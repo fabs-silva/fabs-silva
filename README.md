@@ -21,6 +21,8 @@ public class Dev {
     
     ▾ public Dev ...
     
+    ▾ //GETTERS ...
+    
     @Id
     @GeneratedValue(generator="increment")
     @GenericGenerator(name="increment", strategy = "increment")
@@ -28,14 +30,6 @@ public class Dev {
         return id;
     }
     
-   public String getName(){ return name; }
-   
-   public String getHomeTown(){ return homeTown }
-   
-   public String getCurrentLiving(){
-      return currentLiving;
-   }
-   
    public Integer getAge(Integer devAge){
       if(devAge < 18) { return 18; }
       
@@ -43,12 +37,6 @@ public class Dev {
       
       return devAge;
    }
-   
-   public DevExperience getExperience(){ return experience; }
-   
-   public DevRole getRole(){ return devRole; }
-   
-   public String getWorkplace(){ return workplace; }
    
    @Temporal(TemporalType.TIMESTAMP)
    public Date getWorkingSince() { return date; }
